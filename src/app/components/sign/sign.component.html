@@ -1,0 +1,40 @@
+<div class="sign-container">
+  <div class="sign-card">
+
+    <h1>@if(isLogin) { Login } @else { Sign Up }</h1>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" required [(ngModel)]="email" name="email" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" required [(ngModel)]="password" name="password" />
+    </mat-form-field>
+
+    @if(!isLogin) {
+      <mat-form-field appearance="outline">
+        <mat-label>Confirm Password</mat-label>
+        <input matInput type="password" required [(ngModel)]="confirmPassword" name="confirmPassword" />
+      </mat-form-field>
+    }
+
+    <button (click)="onSubmit()" [disabled]="loading">
+      @if(loading) { Loading... } @else { {{ isLogin ? 'Login' : 'Register' }} }
+    </button>
+
+    @if(error) {
+      <div class="error-message">{{ error }}</div>
+    }
+
+    <div class="toggle-action">
+      @if(isLogin) {
+        Don't have an account? <span class="toggle-link" (click)="toggleForm()">Register</span>
+      } @else {
+        Already have an account? <span class="toggle-link" (click)="toggleForm()">Login</span>
+      }
+    </div>
+
+  </div>
+</div>

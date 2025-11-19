@@ -1,0 +1,53 @@
+<!Doctype html>
+<html>
+
+<body class="app-container">
+
+<header class="header">
+  <a routerLink="/">Shopping Application</a>
+</header>
+
+<hr class="divider" />
+
+<nav class="nav-bar">
+
+  <div class="left-link">
+    <a routerLink="/products" routerLinkActive="active-link">Products</a>
+    <a routerLink="/cart" routerLinkActive="active-link" class="cart-icon">
+      Cart
+      @if(cartItemCount > 0) {
+        <span class="cart-badge">{{ cartItemCount }}</span>
+      }
+    </a>
+  </div>
+
+  @if(isAuthenticated) {
+    <div class="center-name">
+      <span class="username"> Welcome, {{ userName }}! </span>
+    </div>
+  }
+
+  <div class="right-link">
+    @if(isAuthenticated) {
+      <a (click)="logout()">Logout</a>
+    } @else {
+      <a (click)="login()">Sign in</a>
+    }
+  </div>
+
+</nav>
+
+<hr class="divider" />
+
+  @if(showHomeImage) {
+    <div class="sign-container">
+      <div class="sign-card">
+        <h1>Welcome</h1>
+      </div>
+    </div>
+  }
+
+<router-outlet></router-outlet>
+
+</body>
+</html>

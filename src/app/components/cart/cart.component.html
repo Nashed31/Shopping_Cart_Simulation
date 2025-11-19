@@ -1,0 +1,21 @@
+<div class="products-container">
+
+  <button class="click-btn" (click)="clearCart()">Clear Cart</button>
+
+  <div class="products-grid">
+    @for (item of cart; track item.name) {
+      <div class="product-card">
+        <h1>{{ item.name }}</h1>
+
+        @if (showHomeImage) {
+          <div class="product-image" [style.background-image]="'url(' + imgUrl + ')'"></div>
+        }
+
+        <p class="product-price"> ${{ item.price }} </p>
+        <p class="product-quantity"> Quantity: {{ item.quantity }} </p>
+        <button (click)="removeItem(item.name)"> Remove </button>
+      </div>
+    }
+  </div>
+
+</div>

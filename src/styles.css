@@ -1,0 +1,471 @@
+:root {
+  --backGround: url("assets/homeBackGround.jpg");
+  --primary-color: #40826D;
+  --primary-blur-color: #78b496;
+  --secondary-color: white;
+  --black-color: rgba(0, 0, 0, 0.3);
+  --extra-color: blue;
+  --error-color: red;
+}
+/**************************************************** MAIN PAGE *******************************************************/
+.app-container {
+  position: relative;
+  max-width: 95%;
+  margin: auto;
+  padding: 5px;
+  font-family: Arial, sans-serif;
+  background-color: var(--secondary-color);
+  border-radius: 25px;
+  cursor: default;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.header a {
+  font-size: 25px;
+  font-weight: bold;
+  color: var(--secondary-color);
+  text-decoration: none;
+  padding: 10px;
+}
+
+.divider {
+  border: none;
+  border-top: 5px solid var(--secondary-color);
+  margin: 0;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  background-color: var(--primary-color);
+  border-radius: 20px;
+  font-size: 22px;
+}
+
+.active-link {
+  background-color: var(--primary-blur-color);
+  border-radius: 15px;
+}
+
+.multiple-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.center-name {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+.right-link {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.nav-bar a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  padding: 8px 12px;
+}
+
+.header a:hover, .nav-bar a:hover {
+  transition: background-color 0.3s, transform 0.3s;
+  background-color: var(--primary-blur-color);
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.cart-icon {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -5px;
+  right: -15px;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  font-size: 18px;
+  font-weight: bold;
+  padding: 0 4px;
+  min-width: 20px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+/**************************************************** SIGN PAGE *******************************************************/
+
+.sign-container {
+  width: 100%;
+  min-height: 100dvh;
+  background-image: var(--backGround);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 20px;
+  position: relative;
+  cursor: default;
+}
+
+.sign-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: var(--secondary-color);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px var(--black-color);
+  width: 90%;
+  max-width: 400px;
+  margin-top: 100px;
+  animation: fadeIn 1s ease-in-out;
+  font-family: 'Arial', Tahoma, Geneva, Verdana, sans-serif;
+  transition: min-height 0.3s ease-in-out;
+}
+
+.sign-card h1, h2, .updateProducts-card h1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  margin-top: -10px;
+  font-size: 25px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+input {
+  font-size: 16px;
+  padding: 10px;
+}
+
+.form-field .mat-mdc-form-field-flex{
+  color: var(--primary-color);
+}
+
+.form-field .mat-mdc-floating-label {
+  top: 50% !important;
+}
+
+.form-field .mat-mdc-floating-label.mdc-floating-label--float-above {
+
+  transform: translateY(-225%) scale(0.75) !important;
+}
+
+.sign-card button, .updateProducts-card button  {
+  width: 100%;
+  height: 50px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.sign-card button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.sign-card button:hover, .updateProducts-card button:hover {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: var(--primary-blur-color);
+}
+
+.error-message {
+  white-space: pre-line;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--error-color);
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.toggle-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  color: var(--primary-color);
+  border: none;
+  font-size: 16px;
+  margin-bottom: -10px;
+}
+
+.toggle-link {
+  color: var(--extra-color);
+}
+
+.toggle-action .toggle-link:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/************************************************ PRODUCTS AND CART ***************************************************/
+
+.products-container {
+  width: 100%;
+  min-height: 100dvh;
+  background-image: var(--backGround);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: 'Arial', Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 20px;
+  cursor: default;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  justify-items: center;
+  padding: 80px;
+  width: 90%;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.product-card {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  max-height: 250px;
+  background-color: var(--secondary-color);
+  border-radius: 20px;
+  box-shadow: 0 4px 6px var(--black-color);
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-card h1 {
+  color: var(--primary-color);
+  margin-top: -1px;
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.product-card div {
+  height: 15vh;
+  width: 15vh;
+}
+
+.product-image {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+  align-content: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.product-price {
+  margin-top: 10px;
+  margin-bottom: -0px;
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.product-quantity {
+  margin-top: -0px;
+  margin-bottom: -0px;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.product-card button {
+  width: 60%;
+  height: 40px;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.product-card button:hover {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: var(--primary-blur-color);
+}
+
+.click-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  color: var(--secondary-color);
+  border: none;
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+  background-color: var(--primary-color);
+  border-radius: 10px;
+}
+
+.click-btn:hover {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: var(--primary-blur-color);
+}
+
+.updateProducts-blur-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  background-color: var(--black-color);
+  z-index: 10;
+}
+
+.updateProducts-card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  background-color: var(--secondary-color);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px var(--black-color);
+  width: 90%;
+  max-width: 400px;
+}
+
+
+@media (max-width: 768px) {
+  .header a {
+    font-size: 2.5vh;
+    padding: 1vh;
+  }
+
+  .nav-bar {
+    padding: 1vh;
+    font-size: 2vh;
+  }
+
+  .center-name {
+    color: var(--primary-color);
+    font-size: 2vh;
+    padding: 1vh;
+    margin-top: 16vh;
+  }
+
+  .cart-badge {
+    font-size: 2vh;
+  }
+
+  /**************************************************** SIGN PAGE *******************************************************/
+
+  .sign-card {
+    width: 60%;
+  }
+
+  .sign-card h1, h2, .updateProducts-card h1{
+    height: 5vh;
+    font-size: 2.5vh;
+  }
+
+  .sign-card button, .updateProducts-card button  {
+    height: 5vh;
+    font-size: 2vh;
+  }
+
+  .error-message {
+    font-size: 1.5vh;
+  }
+
+  .toggle-action {
+    height: 5vh;
+    font-size: 1.5vh;
+  }
+
+  /************************************************ PRODUCTS AND CART ***************************************************/
+
+
+  .products-grid {
+    padding: 8vh;
+  }
+
+  .product-card h1 {
+    font-size: 2.5vh;
+  }
+
+  .product-price {
+    font-size: 2.5vh;
+  }
+
+  .product-quantity {
+    font-size: 2vh;
+  }
+
+  .product-card button {
+    height: 5vh;
+    font-size: 2vh;
+  }
+
+  .click-btn {
+    font-size: 2vh;
+  }
+}

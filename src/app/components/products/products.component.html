@@ -1,0 +1,16 @@
+<div class="products-container">
+  <div class="products-grid">
+    @for (product of products; track product.name) {
+      <div class="product-card">
+        <h1>{{ product.name }}</h1>
+
+        @if (showHomeImage) {
+          <div class="product-image" [style.background-image]="'url(' + imgUrl + ')'"></div>
+        }
+
+        <p class="product-price">${{ product.price }}</p>
+        <button (click)="addToCart(product)">Add to Cart</button>
+      </div>
+    }
+  </div>
+</div>
